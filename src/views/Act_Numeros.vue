@@ -105,10 +105,10 @@
           <v-card-subtitle>
             <v-radio-group v-if="answer[i]" v-model="test_values[i]">
               <v-radio value="true" :label="card.text_true" />
-              <v-radio value="false" :label="card.text_false" />
+              <v-radio v-for="(tf, j) in card.text_false" :key="j" value="false" :label="tf" />
             </v-radio-group>
             <v-radio-group v-else v-model="test_values[i]">
-              <v-radio value="false" :label="card.text_false" />
+              <v-radio v-for="(tf, j) in card.text_false" :key="j" value="false" :label="tf" />
               <v-radio value="true" :label="card.text_true" />
             </v-radio-group>
           </v-card-subtitle>
@@ -166,27 +166,69 @@ export default {
     cards: [
       {
         img: "uno.png",
-        text_false: "Wa",
+        text_false: ["Wa"],
         text_true: "Aba",
         val: "Uno",
       },
       {
         img: "veinte.jpeg",
-        text_false: "Ubea",
+        text_false: ["Ubea"],
         text_true: "Wau aba",
         val: "Veinte",
       },
       {
         img: "cinco.jpeg",
-        text_false: "Wau aba",
+        text_false: ["Wau aba"],
         text_true: "Juesoma",
         val: "Cinco",
       },
       {
         img: "cuarenta.jpeg",
-        text_false: "Kidua ume",
+        text_false: ["Kidua ume"],
         text_true: "Wau ume",
         val: "Cuarenta",
+      },
+      {
+        img: "canoa.png",
+        text_false: ["Harppon", "Rowing", "Fishing"],
+        text_true: "Canoe",
+        val: "Canoa",
+      },
+      {
+        img: "atarraya.png",
+        text_false: ["fishing rod", , "fish hook", "canoe"],
+        text_true: "cast net",
+        val: "Atraya",
+      },
+      {
+        img: "hervir.png",
+        text_false: ["To drink", "To wash", "To fix"],
+        text_true: "To boil",
+        val: "Hervir",
+      },
+      {
+        img: "escribir.png",
+        text_false: [ "To put", "To fill", "To wrap"],
+        text_true: "To write",
+        val: "Escribir",
+      },
+      {
+        img: "tocar_flauta.png",
+        text_false: ["To walk", "To bow", "To break"],
+        text_true: "To play the flute",
+        val: "Tocar la flauta",
+      },
+      {
+        img: "nadar.png",
+        text_false: ["To saw", "To catch", "To drink"],
+        text_true: "To swim",
+        val: "Nadar",
+      },
+      {
+        img: "fumar.png",
+        text_false: ["To turn", "To saw", "To arrive"],
+        text_true: "To smoke",
+        val: "Fumar",
       },
     ],
 

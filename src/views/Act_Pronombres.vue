@@ -105,10 +105,10 @@
           <v-card-subtitle>
             <v-radio-group v-if="answer[i]" v-model="test_values[i]">
               <v-radio value="true" :label="card.text_true" />
-              <v-radio value="false" :label="card.text_false" />
+              <v-radio v-for="(tf, j) in card.text_false" :key="j" value="false" :label="tf" />
             </v-radio-group>
-            <v-radio-group v-else v-model="test_values[i]">
-              <v-radio value="false" :label="card.text_false" />
+            <v-radio-group v-else v-model="test_values[i]">              
+              <v-radio v-for="(tf, j) in card.text_false" :key="j" value="false" :label="tf" />
               <v-radio value="true" :label="card.text_true" />
             </v-radio-group>
           </v-card-subtitle>
@@ -154,28 +154,47 @@ export default {
     cards: [
       {
         img: "el.png",
-        text_false: "Mu",
+        text_false: ["Mu"],
         text_true: "Jari yumakira",
         val: "Él",
       },
       {
         img: "ella.png",
-        text_false: "Bu",
+        text_false: ["Bu"],
         text_true: "Jari yuwera",
         val: "Ella",
       },
       {
         img: "ellos.png",
-        text_false: "Daira",
+        text_false: ["Daira"],
         text_true: "Jarira yumakirara",
         val: "Ellos",
       },
       {
         img: "ellas.png",
-        text_false: "Mara",
+        text_false: ["Mara"],
         text_true: "Jarira yuwerara",
         val: "Ellas",
       },
+      {
+        img: "arroz.png",
+        text_false: ["Fire", "Party", "Lamp"],
+        text_true: "Rice",
+        val: "Arroz",
+      },
+      {
+        img: "almohada.png",
+        text_false: ["Plate", "Pillow", "Fan" , "Blanket"],
+        text_true: "Pillow",
+        val: "Almohada",
+      },
+      {
+        img: "fuego.png",
+        text_false: ["Timber", "Blanket", "Pillow"],
+        text_true: "Fire",
+        val: "Fuego",
+      },
+
     ],
 
     answer: [],

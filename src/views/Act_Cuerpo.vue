@@ -108,10 +108,10 @@
           <v-card-subtitle>
             <v-radio-group v-if="answer[i]" v-model="test_values[i]">
               <v-radio value="true" :label="card.text_true" />
-              <v-radio value="false" :label="card.text_false" />
+              <v-radio v-for="(tf, j) in card.text_false" :key="j" value="false" :label="tf" />
             </v-radio-group>
             <v-radio-group v-else v-model="test_values[i]">
-              <v-radio value="false" :label="card.text_false" />
+              <v-radio v-for="(tf, j) in card.text_false" :key="j" value="false" :label="tf" />
               <v-radio value="true" :label="card.text_true" />
             </v-radio-group>
           </v-card-subtitle>
@@ -183,28 +183,47 @@ export default {
     cards: [
       {
         img: "antebrazo.jpeg",
-        text_false: "knee articulation",
+        text_false: ["knee articulation"],
         text_true: "forearm",
         val: "Antebrazo",
       },
       {
         img: "codo.jpeg",
-        text_false: "Ãtenana",
+        text_false: ["Ãtenana"],
         text_true: "Ãbidarra",
         val: "Codo",
       },
       {
         img: "ceja.png",
-        text_false: "Ãtenana",
+        text_false: ["Ãtenana"],
         text_true: "Dau buwuru kara",
         val: "Ceja",
       },
       {
         img: "mano.jpeg",
-        text_false: "groin",
+        text_false: ["groin"],
         text_true: "hand",
         val: "Mano",
       },
+      {
+        img: "enfermo.png",
+        text_false: ["Blindless","Running nose","Illness","Swollen"],
+        text_true: "Running nose",
+        val: "Nariz congestionada",
+      },
+      {
+        img: "abuela.png",
+        text_false: ["Granson", "mother", "father"],
+        text_true: "Grand mother",
+        val: "Abuela",
+      },
+      {
+        img: "maldad.png",
+        text_false: ["God", "Medice-man", "Puberty dance"],
+        text_true: "Devil",
+        val: "Maldad"
+      },
+      
     ],
 
     answer: [],

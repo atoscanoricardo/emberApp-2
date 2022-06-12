@@ -105,10 +105,10 @@
           <v-card-subtitle>
             <v-radio-group v-if="answer[i]" v-model="test_values[i]">
               <v-radio value="true" :label="card.text_true" />
-              <v-radio value="false" :label="card.text_false" />
+              <v-radio v-for="(tf, j) in card.text_false" :key="j" value="false" :label="tf" />
             </v-radio-group>
             <v-radio-group v-else v-model="test_values[i]">
-              <v-radio value="false" :label="card.text_false" />
+              <v-radio v-for="(tf, j) in card.text_false" :key="j" value="false" :label="tf" />
               <v-radio value="true" :label="card.text_true" />
             </v-radio-group>
           </v-card-subtitle>
@@ -167,28 +167,71 @@ export default {
     cards: [
       {
         img: "rojo.png",
-        text_false: "Jari yumakira",
+        text_false: ["Jari yumakira"],
         text_true: "Yi purru",
         val: "Rojo",
       },
       {
         img: "blanco.png",
-        text_false: "juesoma",
+        text_false: ["juesoma"],
         text_true: "Torroa",
         val: "Blanco",
       },
       {
         img: "azul.png",
-        text_false: "Daira",
+        text_false: ["Daira"],
         text_true: "Aparra umu",
         val: "Azul",
       },
       {
         img: "naranjado.png",
-        text_false: "kirara aba",
+        text_false: ["kirara aba"],
         text_true: "Yi jega",
         val: "Naranjado",
       },
+      {
+        img: "sol.png",
+        text_false: ["Earth", "soil", "time",],
+        text_true: "sun",
+        val: "Sol",
+      },
+      {
+        img: "tierra.png",
+        text_false: ["Soil", "Mountain", "Sky"],
+        text_true: "Earth",
+        val: "Tierra",
+      },
+      {
+        img: "mar.png",
+        text_false: ["Winter", "River", "Land"],
+        text_true: "Sea",
+        val: "Mar",
+      },
+      {
+        img: "arcoiris.png",
+        text_false: ["Land", "Earth", "Soil"],
+        text_true: "Rainbow",
+        val: "Arcoiris",
+      },
+      {
+        img: "montana.png",
+        text_false: ["Soil", "Land", "River"],
+        text_true: "Mountain",
+        val: "Montaña",
+      },
+      {
+        img: "estrella.png",
+        text_false: ["Winter", "Day", "Air"],
+        text_true: "Star",
+        val: "Estrella",
+      },
+      {
+        img: "inundacion.png",
+        text_false: ["Night", "Jungle", "Star"],
+        text_true: "Flooding",
+        val: "Inundación",
+      }
+
     ],
 
     answer: [],
