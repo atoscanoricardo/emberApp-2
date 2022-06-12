@@ -7,7 +7,7 @@
             <v-app-bar-nav-icon color="white"></v-app-bar-nav-icon>
 
             <v-toolbar-title class="text-h6 white--text pl-0">
-              EmberApp
+              LINGUA DICTIONARY SOFTWARE FOR EMBERA CHILDREN
             </v-toolbar-title>
 
             <v-spacer></v-spacer>
